@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Left from './left';
-import Right from './right';
+import Left from './Left';
+import Right from './Right';
 import './App.css'; 
 import membersData from './MembersData.json';
 

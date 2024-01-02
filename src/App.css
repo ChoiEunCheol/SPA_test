@@ -14,13 +14,11 @@
   word-wrap: break-word;
   height: 460px;
   overflow-y: auto;
-  background-color: aqua;
 }
 
 .left {
   width: 120px;
   height: 500px;
-  background-color: aquamarine;
   margin-right: 50px;
 }
 
