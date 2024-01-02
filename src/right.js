@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import './App.css'; 
 
 const Right = ({ membersData, selectedName }) => {
   const [searchName, setSearchName] = useState("");
