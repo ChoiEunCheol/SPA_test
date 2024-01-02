@@ -10,9 +10,9 @@ const Left = ({ members, onNameClick, selectedName }) => {
             key={member.name}
             onClick={() => onNameClick(member.name)}
             style={{
-              listStyleType: member.name === selectedName ? 'disc' : 'none', // 기호 표시
-              textAlign: member.name === selectedName ? 'right' : 'left', // 우측 정렬
-              opacity: member.name === selectedName ? '1' : '0.5', // 투명도 설정
+              listStyleType: member.name === selectedName ? 'disc' : 'none',
+              textAlign: member.name === selectedName ? 'right' : 'left',
+              opacity: member.name === selectedName ? '1' : '0.5',
             }}
           >
             {member.name}

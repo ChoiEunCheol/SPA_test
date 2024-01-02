@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import "./App.css";
+import React, { useState, useEffect } from 'react';
+import './App.css';
 
 const Right = ({ membersData, selectedName }) => {
   const [searchName, setSearchName] = useState("");
@@ -7,10 +7,7 @@ const Right = ({ membersData, selectedName }) => {
 
   useEffect(() => {
     const targetName = searchName || selectedName;
-
-    const foundMember =
-      membersData &&
-      Object.values(membersData).find((member) => member.name === targetName);
+    const foundMember = membersData && Object.values(membersData).find((member) => member.name === targetName);
 
     if (foundMember) {
       setMemberInfo(foundMember);
@@ -20,11 +17,11 @@ const Right = ({ membersData, selectedName }) => {
   }, [membersData, searchName, selectedName]);
 
   const handleSearch = (e) => {
+    e.preventDefault();
     setSearchName("");
   };
 
   return (
-    <>
     <div className="right-container">
       <div className="input-form">
         <div className="member-info">
@@ -40,16 +37,15 @@ const Right = ({ membersData, selectedName }) => {
         </div>
       </div>
       <form onSubmit={handleSearch}>
-          <input
-            name="input"
-            type="text"
-            value={searchName}
-            onChange={(e) => setSearchName(e.target.value)}
-          />
-        <button  name="button" type="submit">Delete</button>
+        <input
+          name="input"
+          type="text"
+          value={searchName}
+          onChange={(e) => setSearchName(e.target.value)}
+        />
+        <button name="button" type="submit">Delete</button>
       </form>
-      </div>
-    </>
+    </div>
   );
 };
 
