@@ -1,12 +1,12 @@
 import React from 'react';
 
-const MemberList = ({ members }) => {
+const Left = ({ members, onNameClick }) => {
   return (
-    <div className="member-list">
+    <div className="left">
       <ul>
-        {Object.keys(members).map((key) => (
-          <li key={key}>
-            <strong>{members[key].name}</strong>
+        {Object.values(members).map((member) => (
+          <li key={member.name} onClick={() => onNameClick(member.name)}>
+            {member.name}
           </li>
         ))}
       </ul>
@@ -14,4 +14,4 @@ const MemberList = ({ members }) => {
   );
 };
 
-export default MemberList;
+export default Left;
