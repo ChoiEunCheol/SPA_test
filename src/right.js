@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from "react";
+import './App.css'; 
 
 const Right = ({ membersData, selectedName }) => {
   const [searchName, setSearchName] = useState("");
-  const [filteredMembers, setFilteredMembers] = useState([]);
+  const [memberInfo, setMemberInfo] = useState(null);
 
   useEffect(() => {
     const targetName = searchName || selectedName;
 
-    if (targetName) {
-      const foundMember = membersData && membersData[targetName];
-      setFilteredMembers(foundMember ? [foundMember] : []);
+    const foundMember =
+      membersData &&
+      Object.values(membersData).find((member) => member.name === targetName);
+
+    if (foundMember) {
+      setMemberInfo(foundMember);
     } else {
-      setFilteredMembers(Object.values(membersData));
+      setMemberInfo(null);
     }
   }, [membersData, searchName, selectedName]);
 
@@ -22,14 +26,12 @@ const Right = ({ membersData, selectedName }) => {
   return (
     <div className="input-form">
       <div className="member-info">
-        {filteredMembers.length ? (
-          filteredMembers.map((member) => (
-            <div key={member.name}>
-              <h3>{member.name} 소개</h3>
-              <p>자기 소개: {member.mainParagraph}</p>
-              <p>별명: {member.subParagraph}</p>
-            </div>
-          ))
+        {memberInfo ? (
+          <>
+            <h3>{memberInfo.name} 소개</h3>
+            <p>자기 소개: {memberInfo.mainParagraph}</p>
+            <p>별명: {memberInfo.subParagraph}</p>
+          </>
         ) : (
           <p>멤버를 찾을 수 없습니다.</p>
         )}
