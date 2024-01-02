@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import './App.css'; 
+import "./App.css";
 
 const Right = ({ membersData, selectedName }) => {
   const [searchName, setSearchName] = useState("");
@@ -24,30 +24,32 @@ const Right = ({ membersData, selectedName }) => {
   };
 
   return (
-    <div className="input-form">
-      <div className="member-info">
-        {memberInfo ? (
-          <>
-            <h3>{memberInfo.name} 소개</h3>
-            <p>자기 소개: {memberInfo.mainParagraph}</p>
-            <p>별명: {memberInfo.subParagraph}</p>
-          </>
-        ) : (
-          <p>멤버를 찾을 수 없습니다.</p>
-        )}
+    <>
+    <div className="right-container">
+      <div className="input-form">
+        <div className="member-info">
+          {memberInfo ? (
+            <>
+              <h3>{memberInfo.name} 소개</h3>
+              <p>자기 소개: {memberInfo.mainParagraph}</p>
+              <p>별명: {memberInfo.subParagraph}</p>
+            </>
+          ) : (
+            <p></p>
+          )}
+        </div>
       </div>
       <form onSubmit={handleSearch}>
-        <label>
-          Name:
           <input
+            name="input"
             type="text"
             value={searchName}
             onChange={(e) => setSearchName(e.target.value)}
           />
-        </label>
-        <button type="submit">Delete</button>
+        <button  name="button" type="submit">Delete</button>
       </form>
-    </div>
+      </div>
+    </>
   );
 };
 

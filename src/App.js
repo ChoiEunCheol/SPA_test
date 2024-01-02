@@ -6,7 +6,7 @@ import membersData from './MembersData.json';
 
 
 const App = () => {
-  const [selectedName, setSelectedName] = useState('');
+  const [selectedName, setSelectedName] = useState("");
 
   const handleNameClick = (name) => {
     setSelectedName(name);
@@ -15,7 +15,7 @@ const App = () => {
   return (
     <div className="app">
       <div className="container">
-        <Left members={membersData} onNameClick={handleNameClick} />
+        <Left members={membersData} onNameClick={handleNameClick} selectedName={selectedName} />
         <Right membersData={membersData} selectedName={selectedName} />
       </div>
     </div>

@@ -4,12 +4,32 @@
 
 .container {
   display: flex;
-  justify-content: center; /* 수평 중앙 정렬 */
-  align-items: center; /* 수직 중앙 정렬 */
-  height: 100vh; /* 뷰포트의 100% 높이를 차지 */
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.input-form{
+.input-form {
   width: 500px;
   word-wrap: break-word;
+  height: 460px;
+  overflow-y: auto;
+  background-color: aqua;
+}
+
+.left {
+  width: 120px;
+  height: 500px;
+  background-color: aquamarine;
+  margin-right: 50px;
+}
+
+.right-container {
+  width: 500px;
+}
+
+.right-container form {
+  height: 40px;
+  display: flex;
+  flex-direction: column;
 }
